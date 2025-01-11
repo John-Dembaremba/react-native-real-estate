@@ -20,7 +20,11 @@ export const GlobalContext = createContext<GlobalContextType | undefined>(
   undefined
 );
 
-export const GlobalProvider = ({ childern }: { childern: ReactNode }) => {
+interface GlobalProviderProps {
+  children: ReactNode;
+}
+
+export const GlobalProvider = ({ children }: GlobalProviderProps) => {
   const {
     data: user,
     loading,
@@ -40,7 +44,7 @@ export const GlobalProvider = ({ childern }: { childern: ReactNode }) => {
         refetch,
       }}
     >
-      {childern}
+      {children}
     </GlobalContext.Provider>
   );
 };
