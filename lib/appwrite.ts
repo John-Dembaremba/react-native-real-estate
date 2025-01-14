@@ -19,7 +19,7 @@ export const config = {
   reviewsCollectionID:
     process.env.EXPO_PUBLIC_APPWRITE_DB_REVIEWS_COLLECTION_ID,
   propertiesCollectionID:
-    process.env.EXPO_PUBLIC_APPWRITE_DB_REVIEWS_COLLECTION_ID,
+    process.env.EXPO_PUBLIC_APPWRITE_DB_PROPERTIES_COLLECTION_ID,
 };
 
 export const client = new Client();
