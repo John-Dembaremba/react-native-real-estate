@@ -1,4 +1,10 @@
-import { Account, Avatars, Client, OAuthProvider } from "react-native-appwrite";
+import {
+  Account,
+  Avatars,
+  Client,
+  Databases,
+  OAuthProvider,
+} from "react-native-appwrite";
 import * as Linking from "expo-linking";
 import { openAuthSessionAsync } from "expo-web-browser";
 
@@ -6,6 +12,14 @@ export const config = {
   platform: process.env.APPWRITE_PLATFORM_APP_NAME,
   endpoint: process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT,
   projectId: process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID,
+  databaseId: process.env.EXPO_PUBLIC_APPWRITE_DB_ID,
+  agentCollectionID: process.env.EXPO_PUBLIC_APPWRITE_DB_AGENTS_COLLECTION_ID,
+  galleriesCollectionID:
+    process.env.EXPO_PUBLIC_APPWRITE_DB_GALLERIES_COLLECTION_ID,
+  reviewsCollectionID:
+    process.env.EXPO_PUBLIC_APPWRITE_DB_REVIEWS_COLLECTION_ID,
+  propertiesCollectionID:
+    process.env.EXPO_PUBLIC_APPWRITE_DB_REVIEWS_COLLECTION_ID,
 };
 
 export const client = new Client();
@@ -17,6 +31,7 @@ client
 
 export const avatar = new Avatars(client);
 export const account = new Account(client);
+export const databases = new Databases(client);
 
 export async function login() {
   try {
